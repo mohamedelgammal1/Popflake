@@ -1,4 +1,4 @@
-package com.valify.popflake.ui.theme
+package com.valify.popflake.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
