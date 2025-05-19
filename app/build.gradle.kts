@@ -122,4 +122,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     androidTestImplementation("androidx.hilt:hilt-testing:1.0.0")
     testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("io.mockk:mockk:1.13.8")
+    testImplementation("io.mockk:mockk-junit5:1.13.8")
+
 }
