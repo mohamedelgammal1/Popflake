@@ -1,4 +1,7 @@
 package com.valify.popflake
 
-class PopFlakeApp {
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class PopFlakeApp : Application()
