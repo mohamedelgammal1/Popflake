@@ -61,6 +61,7 @@ fun HomeScreen(
                                 .height(200.dp)
                         )
                     }
+
                     is UiState.Loading -> {
                         Box(
                             modifier = Modifier
@@ -71,6 +72,7 @@ fun HomeScreen(
                             CircularProgressIndicator()
                         }
                     }
+
                     is UiState.Error -> {
                         ErrorView(
                             message = (nowPlayingState as UiState.Error).message,
@@ -91,14 +93,17 @@ fun HomeScreen(
 
                 when (upcomingState) {
                     is UiState.Success -> {
-                        // todo fix
                         HorizontalMovieList(
                             movies = (upcomingState as UiState.Success<List<Movie>>).data,
-                            onMovieClick = { /* Handle movie click */TODO() },
-                            title = TODO(),
-                            modifier = TODO()
+                            onMovieClick = { /* Handle movie click */// todo fix
+                            },
+                            title = stringResource(R.string.upcoming_movies),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp)
                         )
                     }
+
                     is UiState.Loading -> {
                         Box(
                             modifier = Modifier
@@ -109,12 +114,13 @@ fun HomeScreen(
                             CircularProgressIndicator()
                         }
                     }
+
                     is UiState.Error -> {
                         ErrorView(
                             message = (upcomingState as UiState.Error).message,
                             onRetry = { viewModel.refreshUpcoming() },
 
-                        )
+                            )
                     }
                 }
             }
@@ -130,14 +136,17 @@ fun HomeScreen(
 
                 when (nowPlayingState) {
                     is UiState.Success -> {
-                        // todo fix
                         HorizontalMovieList(
                             movies = (nowPlayingState as UiState.Success<List<Movie>>).data,
-                            onMovieClick = { /* Handle movie click */TODO() },
-                            title = TODO(),
-                            modifier = TODO()
+                            onMovieClick = { /* Handle movie click */// todo fix
+                                 },
+                            title = stringResource(R.string.now_playing),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp)
                         )
                     }
+
                     is UiState.Loading -> {
                         Box(
                             modifier = Modifier
@@ -148,6 +157,7 @@ fun HomeScreen(
                             CircularProgressIndicator()
                         }
                     }
+
                     is UiState.Error -> {
                         ErrorView(
                             message = (nowPlayingState as UiState.Error).message,
@@ -168,14 +178,17 @@ fun HomeScreen(
 
                 when (topRatedState) {
                     is UiState.Success -> {
-                        // todo fix
                         HorizontalMovieList(
                             movies = (topRatedState as UiState.Success<List<Movie>>).data,
-                            onMovieClick = { /* Handle movie click */TODO() },
-                            title = TODO(),
-                            modifier = TODO()
+                            onMovieClick = { /* Handle movie click */// todo fix
+                                 },
+                            title = stringResource(R.string.top_rated_movies),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp)
                         )
                     }
+
                     is UiState.Loading -> {
                         Box(
                             modifier = Modifier
@@ -186,6 +199,7 @@ fun HomeScreen(
                             CircularProgressIndicator()
                         }
                     }
+
                     is UiState.Error -> {
                         ErrorView(
                             message = (topRatedState as UiState.Error).message,
@@ -223,6 +237,7 @@ fun HomeScreen(
                             }
                         }
                     }
+
                     is UiState.Loading -> {
                         Box(
                             modifier = Modifier
@@ -233,6 +248,7 @@ fun HomeScreen(
                             CircularProgressIndicator()
                         }
                     }
+
                     is UiState.Error -> {
                         ErrorView(
                             message = (popularState as UiState.Error).message,
